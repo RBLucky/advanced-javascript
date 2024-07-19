@@ -44,13 +44,13 @@ function calculator(x,y,operator = "+") {
 }
 
 calculator(10,20);
-
+*/
 
 let add = ["smooth", "operator"];
 let message = ["Lucky", "is", "a", ...add, "!"];
 
 console.log(message);
-*/
+
 
 /** Recursion */
 /*
