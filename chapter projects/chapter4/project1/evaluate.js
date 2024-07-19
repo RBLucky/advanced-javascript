@@ -4,7 +4,7 @@
 let number = Number(prompt("Enter a number: "));
 
 // create random number
-let random = Math.floor(Math.random()*100000);
+let random = Math.floor(Math.random() * 100000);
 let numberSwitch;
 
 if (number > random) {
@@ -32,5 +32,3 @@ switch (numberSwitch) {
         document.querySelector('#para').innerHTML = "I don't know";
         break;
 }
-
-// console.log the comparison
