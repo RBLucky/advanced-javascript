@@ -229,7 +229,7 @@ for (let index in array) {
 }
 */
 /** Exercise 5.8 */
-
+/*
 let string = "";
 
 let skip = 7;
@@ -242,3 +242,4 @@ for (let i = 1; i < 11; ++i) {
 }
 
 console.log(string);
+*/
