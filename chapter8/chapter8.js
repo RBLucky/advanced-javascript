@@ -87,7 +87,7 @@ console.log(result);
 console.log(s1);
 console.log(s2);
 */
-
+/*
 let result = "Hello JavaScript";
 
 let arr_result = result.split(" ");
@@ -102,3 +102,26 @@ console.log(index_re);
 
 let indexNotFound = poem.indexOf("python");
 console.log(indexNotFound);
+*/
+
+/** Exercise 8.4 */
+
+let original = "thIs will be capiTalized for each word";
+
+function capitalize(string) {
+    string = string.toLowerCase();
+
+    let temp = [];
+
+    let words = string.split(" ");
+    console.log(words);
+    
+    words.forEach(function (word) {
+        let new_words = word.slice(0, 1).toUpperCase() + word.slice(1);
+        //return console.log(new_words);
+        temp.push(new_words);
+    });
+    return temp;
+}
+
+console.log(capitalize(original));
