@@ -105,7 +105,7 @@ console.log(indexNotFound);
 */
 
 /** Exercise 8.4 */
-
+/*
 let original = "thIs will be capiTalized for each word";
 
 function capitalize(string) {
@@ -125,3 +125,55 @@ function capitalize(string) {
 }
 
 console.log(capitalize(original));
+*/
+
+/** Exercise 8.5 */
+/*
+let original = "I love JavaScript";
+let lowerCase = original.toLowerCase();
+
+let vowels = ["a", "e", "i", "o", "u"];
+
+vowels.forEach(function (letter, index) {
+    console.log(letter, index);
+    lowerCase = lowerCase.replaceAll(letter, index);
+});
+
+console.log(lowerCase);
+*/
+
+/** Exercise 8.6 */
+/*
+let pi = Math.PI;
+
+console.log(pi);
+
+console.log("Math.ceil: ", Math.ceil(5.7));
+console.log("Math.floor: ", Math.floor(5.7));
+console.log("Math.round: ", Math.round(5.7));
+
+console.log(Math.floor(Math.random()*100)+1);
+
+function random(min = 1, max = 100) {
+    return console.log(Math.floor(Math.random()*max)+min);
+}
+
+for (let i = 0; i < 99; ++i){
+    random(1, 100);
+}
+*/
+
+/** Exercise 8.7 */
+
+let d = new Date();
+
+console.log(d);
+
+let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+console.log(d.getDate());
+console.log(d.getFullYear());
+
+console.log(months[d.getMonth()]);
+
+
