@@ -68,7 +68,7 @@ function message(x) {
 */
 
 /** Exercise 10.8 */
-
+/*
 let names = ["Brenda", "Felicia", "Steve", "Sipho", "Herman", "Lindi", "Thapelo"];
 
 let message = document.getElementById('message');
@@ -93,6 +93,34 @@ function getData(x) {
     let tempName = x.getAttribute("data-name");
     message.innerHTML = `${tempName } is in row #${temp}`;
  }
-
+*/
 
 /** Exercise 10.9 */
+/*
+let buttons = document.querySelectorAll('button');
+
+console.log(buttons);
+
+buttons.forEach((button) => {
+    function output() {
+        console.log(this.textContent);
+    }
+
+    button.addEventListener("click", output);
+});
+*/
+
+/** Exercise 10.10 */
+
+let addNew = document.getElementById("addNew").onclick;
+
+addNew = function () {
+    addOne();
+}
+
+function addOne() {
+    var a = document.getElementById("addItem").value;
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(a));
+    document.getElementById("sList").appendChild(li);
+}
