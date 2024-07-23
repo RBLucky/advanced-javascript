@@ -1,6 +1,7 @@
 "use strict";
 
 let word = "encyclopaedia";
+console.log(word);
 
 function scramble(string) {
     let stringLength = string.length;
@@ -13,7 +14,7 @@ function scramble(string) {
         tempString += newLetter;
 
         string = string.substr(0, index) + string.substr(index+1);
-        console.log(string);
+        //console.log(string);
     }
 
     return tempString;
