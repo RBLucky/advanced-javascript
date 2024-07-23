@@ -121,7 +121,7 @@ function capitalize(string) {
         //return console.log(new_words);
         temp.push(new_words);
     });
-    return temp;
+    return temp.join(" ");
 }
 
 console.log(capitalize(original));
@@ -175,5 +175,3 @@ console.log(d.getDate());
 console.log(d.getFullYear());
 
 console.log(months[d.getMonth()]);
-
-
