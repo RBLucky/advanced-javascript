@@ -9,7 +9,7 @@ let addFriend = document.getElementById('addFriend');
 let addnew = document.getElementById('addNew');
 let output = document.getElementById('output');
 
-addNew.onClick = function () {
+addNew.onclick = function () {
     let input = addFriend.value;
 
     addToList(input, myArray.length, 0);
