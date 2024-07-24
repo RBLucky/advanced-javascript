@@ -1,5 +1,7 @@
 "use strict";
 
+document.addEventListener('DOMContentLoaded', build);
+
 let myArray = ["Brenda", "Felicia", "Steve", "Sipho", "Herman", "Lindi", "Thapelo"];
 
 let message = document.getElementById('message');
@@ -7,12 +9,18 @@ let addFriend = document.getElementById('addFriend');
 let addnew = document.getElementById('addNew');
 let output = document.getElementById('output');
 
-addFriend.addEventListener("click", function () {
-    let input = this.value;
+addNew.onClick = function () {
+    let input = addFriend.value;
 
     addToList(input, myArray.length, 0);
     myArray.push(input);
-});
+}
+
+function build() {
+    myArray.forEach((item, index) => {
+        addToList(item, index, 0);
+    });
+}
 
 function addToList(input, index, counter) {
     let row = document.createElement("tr");
@@ -39,11 +47,4 @@ function addToList(input, index, counter) {
         row.lastChild.textContent = val;
     }
     output.appendChild(row);
-}
-
-
-function build() {
-    myArray.forEach((item, index) => {
-        addToList(item, index, 0);
-    });
 }
