@@ -57,8 +57,20 @@ for (let i = 0; i < elements.length; ++i) {
 */
 
 /** Exercise 11.3 */
-
+/*
 function message(string, event) {
-    console.log();
-    console.log();
+    console.log(string);
+    console.log(event);
 }
+
+window.onload = (e) => {
+    message("Window ready", e);
+}
+
+document.addEventListener("DOMContentLoaded", (e) => {
+    message("Document is ready", e);
+});
+*/
+
+/** Exercise 11.4 */
+

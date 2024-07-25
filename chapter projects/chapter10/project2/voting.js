@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', build);
 
 let myArray = ["Brenda", "Felicia", "Steve", "Sipho", "Herman", "Lindi", "Thapelo"];
 
+
 let message = document.getElementById('message');
 let addFriend = document.getElementById('addFriend');
 let addnew = document.getElementById('addNew');
