@@ -11,7 +11,7 @@ function lookUp() {
     let holder = [];
 
     for (let i = 0; i < email.length; ++i) {
-        if (holder.indexOf(email[i]) == -1) {
+        if (holder.indexOf(email[i]) === -1) {
             holder.push(email[i]);
         }
     }

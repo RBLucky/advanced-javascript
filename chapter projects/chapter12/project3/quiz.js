@@ -14,8 +14,7 @@ let app = function () {
     }
 
     function ranValue(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) +
-            min);
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
     function loadQuestion() {
@@ -28,8 +27,7 @@ let app = function () {
 
     function checker() {
         let bg = answer.value == game.answer ? "green" : "red";
-        output.innerHTML +=
-            `<div style="color:${bg}">${game.val1} + ${game.val2} = ${game.answer} (${answer.value})</div>`;
+        output.innerHTML += `<div style="color:${bg}">${game.val1} + ${game.val2} = ${game.answer} (${answer.value})</div>`;
         answer.value = "";
         loadQuestion();
     }
