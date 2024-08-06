@@ -1,5 +1,3 @@
-import './index.css';
-
 const sessionTodosContainer = document.getElementById(
   'session-storage-todos-container'
 );
