@@ -20,7 +20,7 @@ const localAddTaskBtn = document.getElementById(
     'local-storage-add-task-btn'
 );
 
-function createTodoLiElements(todoArray) {
+function createTodoLiElements(todoArray, storage) {
     return todoArray.map((i, index) => {
         const liElement = document.createElement('li');
         const checkboxEle = document.createElement('input');
@@ -31,11 +31,19 @@ function createTodoLiElements(todoArray) {
         labelEle.setAttribute('for', `session-chbx-${index}`);
 
         checkboxEle.addEventListener('click', (e) => {
-            const todoArr = JSON.parse(sessionStorage.getItem('codesweetlyStore'));
-            todoArr[e.target.getAttribute('id').split('-')[2]].checked =
-                !todoArr[e.target.getAttribute('id').split('-')[2]].checked;
-            sessionStorage.setItem('codesweetlyStore', JSON.stringify(todoArr));
-            labelEle.classList.toggle('todo-task-done');
+            if (storage === "session") {
+                const todoArr = JSON.parse(sessionStorage.getItem('codesweetlyStore'));
+                todoArr[e.target.getAttribute('id').split('-')[2]].checked =
+                    !todoArr[e.target.getAttribute('id').split('-')[2]].checked;
+                sessionStorage.setItem('codesweetlyStore', JSON.stringify(todoArr));
+                labelEle.classList.toggle('todo-task-done');
+            } else if (storage === "local") {
+                const todoArr = JSON.parse(localStorage.getItem('codesweetlyStore'));
+                todoArr[e.target.getAttribute('id').split('-')[2]].checked =
+                    !todoArr[e.target.getAttribute('id').split('-')[2]].checked;
+                localStorage.setItem('codesweetlyStore', JSON.stringify(todoArr));
+                labelEle.classList.toggle('todo-task-done');
+            }
         });
 
         labelEle.textContent = i.text;
@@ -49,7 +57,16 @@ window.addEventListener(
     (() => {
         const sessionTodoArray =
             JSON.parse(sessionStorage.getItem('codesweetlyStore')) || [];
-        console.log(sessionTodoArray);
+        console.log("Session Storage: ", sessionTodoArray);
+        const localTodoArray =
+            JSON.parse(localStorage.getItem('codesweetlyStore')) || [];
+        console.log("Local Storage: ", localTodoArray);
+
+        let sessionTodoLiElements = createTodoLiElements(sessionTodoArray);
+        let localTodoLiElements = createTodoLiElements(localTodoArray);
+
+        sessionTodosContainer.replaceChildren(...sessionTodoLiElements);
+        localTodosContainer.replaceChildren(...localTodoLiElements);
     })()
 );
 
@@ -73,16 +90,28 @@ sessionAddTaskBtn.addEventListener('click', () => {
     sessionInputEle.value = '';
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Get items already in session storage
-    let inStorage = JSON.parse(sessionStorage.getItem('codesweetlyStore'));
-    console.log("In storage: ", inStorage);
+localAddTaskBtn.addEventListener("click", () => {
+    let currentTodoArray = JSON.parse(localStorage.getItem("codesweetlyStore")) || [];
+    let newTodoArray = [
+        ...currentTodoArray,
+        { checked: false, text: localInputEle.value }
+    ];
+    localStorage.setItem("codesweetlyStore", JSON.stringify(newTodoArray));
+    let todoLiElements = createTodoLiElements(newTodoArray);
+    localTodosContainer.replaceChildren(...todoLiElements);
+    localInputEle.value = "";
+});
 
-    // Loop through items in session storage and display it in a list if not null
-    if (inStorage) {
-        for (let i = 0; i < inStorage.length; ++i) {
-            let listItem = createTodoLiElements(inStorage)
-            sessionTodosContainer.append(listItem[i]);
-        }
-    }
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//     // Get items already in session storage
+//     let inStorage = JSON.parse(sessionStorage.getItem('codesweetlyStore'));
+//     console.log("In storage: ", inStorage);
+
+//     // Loop through items in session storage and display it in a list if not null
+//     if (inStorage) {
+//         for (let i = 0; i < inStorage.length; ++i) {
+//             let listItem = createTodoLiElements(inStorage)
+//             sessionTodosContainer.append(listItem[i]);
+//         }
+//     }
+// })
