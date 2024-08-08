@@ -1,22 +1,22 @@
 "use strict";
 
-// Define three functions
-function firstTask() {
-    console.log("This");
-}
+// // Define three functions
+// function firstTask() {
+//     console.log("This");
+// }
 
-function secondTask() {
-    console.log("Is");
-}
+// function secondTask() {
+//     console.log("Is");
+// }
 
-function thirdTask() {
-    console.log("Synchronous");
-}
+// function thirdTask() {
+//     console.log("Synchronous");
+// }
 
-// Execute the functions
-firstTask();
-secondTask();
-thirdTask();
+// // Execute the functions
+// firstTask();
+// secondTask();
+// thirdTask();
 
 
 // function someLongRunningFunction() {
@@ -133,6 +133,25 @@ thirdTask();
 //     .catch(error => console.log(error))
 
 
+// fetch("http://jsonplaceholder.typicode.com/users")
+//     .then(response => response.json())
+//     .then(data => processData(data))
+//     .then(processedData => {
+//         console.log(processedData);
+//     })
+//     .catch(error => console.log(error));
+
+// function processData(data) {
+//     // Example function to process data
+//     return data.map(user => ({
+//         id: user.id,
+//         name: user.name,
+//         email: user.email
+
+//     }))
+// };
+
+
 
 // fetch("https://api.github.com/users/octocat")
 //   .then((response) => response.json())
@@ -171,10 +190,10 @@ thirdTask();
 
 
 
-// async function getData() {
-//     const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-//     const data = await response.json();
-//     console.log(data);
-// }
+async function getData() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    const data = await response.json();
+    console.log(data);
+}
 
-// getData();
+getData();
