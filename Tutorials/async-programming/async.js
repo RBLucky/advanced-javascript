@@ -1,22 +1,22 @@
 "use strict";
 
-// // Define three functions
-// function firstTask() {
-//     console.log("Task 1");
-// }
+// Define three functions
+function firstTask() {
+    console.log("This");
+}
 
-// function secondTask() {
-//     console.log("Task 2");
-// }
+function secondTask() {
+    console.log("Is");
+}
 
-// function thirdTask() {
-//     console.log("Task 3");
-// }
+function thirdTask() {
+    console.log("Synchronous");
+}
 
-// // Execute the functions
-// firstTask();
-// secondTask();
-// thirdTask();
+// Execute the functions
+firstTask();
+secondTask();
+thirdTask();
 
 
 // function someLongRunningFunction() {
@@ -171,10 +171,10 @@
 
 
 
-async function getData() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-    const data = await response.json();
-    console.log(data);
-}
+// async function getData() {
+//     const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+//     const data = await response.json();
+//     console.log(data);
+// }
 
-getData();
+// getData();
